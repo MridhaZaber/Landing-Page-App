@@ -16,6 +16,7 @@
                         <ul class="dropdown-menu">
                         <li class="{{ Request::is('admin/home-banner') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_home_banner') }}"><i class="fas fa-angle-right"></i> Banner Section</a></li>
                         <li class="{{ Request::is('admin/page/services') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_page_services') }}"><i class="fas fa-angle-right"></i> Services Page</a></li>
+                        <li class="{{ Request::is('admin/portfolio-category/*') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin.service_category_show') }}"><i class="fas fa-angle-right"></i> Category</a></li>
  
                         </ul>
                     </li>
