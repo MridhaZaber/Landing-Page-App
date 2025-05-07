@@ -15,7 +15,8 @@
                         <a href="#" class="nav-link has-dropdown "><i class="fas fa-hand-point-right"></i><span>Home Page</span></a>
                         <ul class="dropdown-menu">
                         <li class="{{ Request::is('admin/home-banner') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_home_banner') }}"><i class="fas fa-angle-right"></i> Banner Section</a></li>
-                           
+                        <li class="{{ Request::is('admin/page/services') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_page_services') }}"><i class="fas fa-angle-right"></i> Services Page</a></li>
+ 
                         </ul>
                     </li>
 
