@@ -5,10 +5,8 @@
     <div class="container">
       <div class="row d-flex justify-content-center section-title">
         <div class="col-lg-6 col-md-8 col-12">
-          <h1>What we provide
-            special services for you</h1>
-          <p>There are many variations of passages of passage available the majority
-            you are going rassing to use a passage of you need to sure.</p>
+          <h1>{{ $services_data->service_title }}</h1>
+          <p>{{ $services_data->service_description }} </p>
         </div>
       </div>
       <div class="row d-flex justify-content-center">
