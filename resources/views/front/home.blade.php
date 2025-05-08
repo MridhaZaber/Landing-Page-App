@@ -47,29 +47,20 @@
     <div class="container-fluid">
       <div class="row d-flex align-items-center">
         <div class="col-lg-6 col-md-12 info-left">
-          <img src="assets/img/i.png" alt=>
+          <img src="{{ asset('uploads/'.$page_data->info_photo) }}" alt=>
         </div>
         <div class="col-lg-6 col-md-12 info-right">
-          <h1>We’ve helped some amazing
-            startups rebrand, redesign
-            and get to market.</h1>
+          <h1>{{ $page_data->info_title }}</h1>
           <ul>
+            @foreach ($infos as $item )
             <li>
-              <div class="list-icon"><img src="assets/img/b1.png" alt=></div>
-              <p>Two before narrow not relied how except moment myself. Dejection assurance mrs led certainly. So gate
-                at no only none open. Betrayed at properly it of graceful on.</p>
+              <div class="list-icon"><img src="{{ 'uploads/'.$item->info_photo }}" alt=></div>
+              <p>{{ $item->info_description }}</p>
             </li>
-            <li>
-              <div class="list-icon"><img src="assets/img/b2.png" alt=></div>
-              <p>Had denoting properly jointure you occasion directly raillery. In said to of poor full be post face
-                snug Introduced imprudence see say.</p>
-            </li>
-            <li>
-              <div class="list-icon"><img src="assets/img/b3.png" alt=></div>
-              <p>
-                Built purse maids cease her ham new seven among and. Pulled coming wooded tended it answer remain me be.
-              </p>
-            </li>
+            
+            @endforeach
+            
+            
           </ul>
         </div>
       </div>

@@ -9,15 +9,20 @@
 
                 <ul class="sidebar-menu">
 
-                    <li class="{{ Request::is('admin/home-banner') ? "active" : "" }} ? "><a class="nav-link" href="index.html"><i class="fas fa-hand-point-right"></i> <span>Dashboard</span></a></li>
+                    <li class="{{ Request::is('admin/home-banner') ? "active" : "" }} ? "><a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-hand-point-right"></i> <span>Dashboard</span></a></li>
 
                     <li class="nav-item dropdown active">
                         <a href="#" class="nav-link has-dropdown "><i class="fas fa-hand-point-right"></i><span>Home Page</span></a>
                         <ul class="dropdown-menu">
                         <li class="{{ Request::is('admin/home-banner') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_home_banner') }}"><i class="fas fa-angle-right"></i> Banner Section</a></li>
+                        <li class="{{ Request::is('admin/home-info') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_home_info') }}"><i class="fas fa-angle-right"></i> Info Section</a></li>
                            
                         </ul>
                     </li>
+
+                    <li class="{{ Request::is('admin/info/show') ? "active" : "" }} ? "><a class="nav-link" href="{{ route('admin_info_show') }}"><i class="fas fa-hand-point-right"></i> <span>Info</span></a></li>
+
+
 
                     <li class=""><a class="nav-link" href="setting.html"><i class="fas fa-hand-point-right"></i> <span>Setting</span></a></li>
 

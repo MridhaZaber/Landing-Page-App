@@ -30,8 +30,11 @@
 
         <div class="main-content">
             <section class="section">
-                <div class="section-header ">
+                <div class="section-header justify-content-between ">
                     <h1>@yield('heading')</h1>
+                    <div>
+                        @yield('rightside_button')
+                    </div>
                 </div>
                 @yield('main_content')
                
@@ -43,6 +46,39 @@
 
 <script src="{{ asset('admin/dist/js/scripts.js') }}"></script>
 <script src="{{ asset('admin/dist/js/custom.js') }}"></script>
+
+@if($errors->any())
+    @foreach($errors->all() as $error)
+        <script>
+            iziToast.error({
+                title: '',
+                position: 'topRight',
+                message: '{{ $error }}',
+            });
+        </script>
+    @endforeach
+@endif
+
+@if(session()->get('error'))
+    <script>
+        iziToast.error({
+            title: '',
+            position: 'topRight',
+            message: '{{ session()->get('error') }}',
+        });
+    </script>
+@endif
+
+@if(session()->get('success'))
+    <script>
+        iziToast.success({
+            title: '',
+            position: 'topRight',
+            message: '{{ session()->get('success') }}',
+        });
+    </script>
+@endif
+
 
 </body>
 </html>
