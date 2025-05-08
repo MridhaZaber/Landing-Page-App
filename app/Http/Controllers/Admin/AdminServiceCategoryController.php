@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\AdminServiceCategory;
+use App\Traits\ImageUploadTrait;
 
 class AdminServiceCategoryController extends Controller
 {
+    use ImageUploadTrait;
+
     public function index()
     {
         $all_data = AdminServiceCategory::orderBy('id','asc')->get();
@@ -29,22 +32,11 @@ class AdminServiceCategoryController extends Controller
         ]);
 
         $obj = new AdminServiceCategory();
-
-        if($request->hasFile('photo')) {
-            $request->validate([
-                'photo' => 'image|mimes:jpg,jpeg,png,gif'
-            ]);
-            unlink(public_path('uploads/'.$page_data->photo));
-
-            $ext = $request->file('photo')->extension();
-            $final_name = 'photo'.time().'.' . $ext;
-
-            $request->file('photo')->move(public_path('uploads/'),$final_name);
-
-            $page_data->photo = $final_name;
-        }
-
-
+ 
+        $logoPath = $this->uploadImage($request, 'photo', 'uploads');
+    
+        $obj->photo = $logoPath;
+    
         $obj->category_title = $request->category_title;
         $obj->category_description = $request->category_description;
         $obj->save();
