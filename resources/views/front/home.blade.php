@@ -11,30 +11,15 @@
       </div>
       <div class="row d-flex justify-content-center">
         <div class="col-lg-4 col-md-6 col-12">
+          @foreach($service_categories as $item)
           <div data-tilt class="single-service text-center">
-            <img src="assets/img/s1.png" alt=>
-            <h4>Social Marketing</h4>
-            <p>There are many variations from passages
-              and passage available the majority you
-              are going rassing.</p>
+            <img src="{{ asset($item->photo) }}" alt=>
+            <h4>{{ $item->category_title }} </h4>
+            <p>{{ $item->category_description	 }}</p>
           </div>
+          @endforeach
         </div>
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="single-service text-center">
-            <img src="assets/img/s2.png" alt=>
-            <h4>SEO Service</h4>
-            <p>Finished her are its honoured drawings nor. Pretty see mutual thrown all not edward Particular
-              anboisterous up.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="single-service text-center">
-            <img src="assets/img/s3.png" alt=>
-            <h4>Web Development</h4>
-            <p>Too cultivated use solicitude frequently. Dashwood likewise up consider continue entrance.
-            </p>
-          </div>
-        </div>
+       
       </div>
     </div>
   </section>
