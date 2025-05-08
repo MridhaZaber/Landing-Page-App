@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('home_page_items', function (Blueprint $table) {
+        Schema::create('infos', function (Blueprint $table) {
             $table->id();
-            $table->text('banner_title')->nullable();
-            $table->text('banner_description')->nullable();
-            $table->text('banner_button_text')->nullable();
-            $table->text('banner_button_url')->nullable();
-            $table->text('banner_photo');
-            $table->text('info_title')->nullable;
+            $table->text('info_description')->nullable();
             $table->text('info_photo');
+
 
             $table->timestamps();
         });
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('home_page_items');
+        Schema::dropIfExists('infos');
     }
 };
