@@ -39,9 +39,9 @@
                                                 {{ $item->category_description }}
                                             </td>
                                             <td class="pt_10 pb_10">
-                                                <a href=" "
+                                                <a href="{{ route('admin_service_category_edit',$item->id) }}"
                                                     class="btn btn-primary">Edit</a>
-                                                <a href=""
+                                                <a href="{{ route('admin_service_category_delete',$item->id) }}"
                                                     class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
 
                                             </td>
