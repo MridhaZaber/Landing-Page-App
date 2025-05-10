@@ -3,7 +3,7 @@
 @section('heading', 'View Posts')
 
 @section('rightside_button')
-    <a href=" " class="btn btn-primary"><i class="fas fa-plus"></i> Add New</a>
+    <a href="{{ route('admin.service_category_add') }} "  class="btn btn-primary"><i class="fas fa-plus"></i> Add New</a>
 @endsection
 
 @section('main_content')
@@ -15,8 +15,7 @@
                         <div class="table-responsive">
                             <table class="table table-bordered" id="example1">
                                 <thead>
-                                    <a href="{{ route('admin.service_category_add') }} " class="btn btn-primary"><i
-                                            class="fas fa-plus"></i> Add New</a>
+                                    
                                     <tr>
                                         <th>SL</th>
                                         <th>Photo</th>

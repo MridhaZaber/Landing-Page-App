@@ -6,12 +6,12 @@ use App\Http\Controllers\Front\FrontEndController;
 
 
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\AdminHomePageController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AdminHomePageController;
 
 use App\Http\Controllers\Admin\AdminServiceController;
 use App\Http\Controllers\Admin\AdminServiceCategoryController;
-use App\Http\Controllers\AdminInfoController;
+use App\Http\Controllers\Admin\AdminInfoController;
 
 
 

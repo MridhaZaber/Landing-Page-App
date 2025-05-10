@@ -28,10 +28,11 @@
                                         <input type="file" name="info_photo">
                                     </div>
                                 </div>
-                                <div class="form-group mb-3">
-                                    <label>Description</label>
-                                    <input type="text" class="form-control" name="info_description" autocomplete="off" value="{{ $row_data->info_description }}">
+                                <div class="mb-4">
+                                    <label class="form-label">Description *</label>
+                                    <textarea name="info_description" class="form-control editor" cols="30" rows="10">{{ $row_data->info_description }}</textarea>
                                 </div>
+                                
                                 
                                 <div class="mb-4">
                                     <label class="form-label"></label>

@@ -23,10 +23,11 @@
                                         <input type="file" name="info_photo">
                                     </div>
                                 </div>    
-                            <div class="mb-4">
+                                <div class="mb-4">
                                     <label class="form-label">Description *</label>
-                                    <input type="text" class="form-control" name="info_description">
+                                    <textarea name="info_description" class="form-control editor" cols="30" rows="10"></textarea>
                                 </div>
+                                
                                 
                                
                                 <div class="mb-4">
