@@ -16,6 +16,9 @@
                                         class="profile-photo w_100_p">
                                     <input type="file" class="form-control mt-10" name="info_photo">
                                 </div>
+
+
+                                
                                 <div class="col-md-9">
                                     <div class="mb-4">
                                         <label class="form-label">Title</label>

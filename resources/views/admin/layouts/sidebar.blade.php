@@ -18,14 +18,17 @@
                         <li class="{{ Request::is('admin/home-banner') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_home_banner') }}"><i class="fas fa-angle-right"></i> Banner Section</a></li>  
                         <li class="{{ Request::is('admin/home-info') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_home_info') }}"><i class="fas fa-angle-right"></i> Info Section</a></li>
                         <li class="{{ Request::is('admin/page/services') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_page_services') }}"><i class="fas fa-angle-right"></i> Services Section</a></li>
+                        <li class="{{ Request::is('admin/stat') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_stat') }}"><i class="fas fa-angle-right"></i> Stat Section</a></li>
+                       
                            
                         </ul>
                     </li>
 
-                   <li class="{{ Request::is('admin/service-category/*') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin.service_category_show') }}"><i class="fas fa-angle-right"></i> Services</a></li></li>
+                   <li class="{{ Request::is('admin/service-category/show') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin.service_category_show') }}"><i class="fas fa-hand-point-right"></i> <span>Services</span></a></li>
                    
 
-                    <li class="{{ Request::is('admin/info/show') ? "active" : "" }} ? "><a class="nav-link" href="{{ route('admin_info_show') }}"><i class="fas fa-hand-point-right"></i> <span>Info</span></a></li>
+                    <li class="{{ Request::is('admin/info/show') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_info_show') }}"><i class="fas fa-hand-point-right"></i> <span>Info</span></a></li>
+
 
 
 

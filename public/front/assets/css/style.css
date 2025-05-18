@@ -1577,13 +1577,7 @@ button {
 /*----------------------------------------*/
 /*  9. Why-Choose Section Style
 /*----------------------------------------*/
-.why-choose-section {
-  background: url(../img/why-bg.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  overflow: hidden;
-}
+
 
 .why-choose-section .row {
   position: relative;
@@ -1640,7 +1634,7 @@ button {
 /*  10. Stat Section Style
 /*----------------------------------------*/
 .stat-section {
-  background: url(../img/testimonial-bg.jpg);
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

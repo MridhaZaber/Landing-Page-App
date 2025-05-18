@@ -37,7 +37,7 @@
           <ul>
             @foreach ($infos as $item )
             <li>
-              <div class="list-icon"><img src="{{ 'uploads/'.$item->info_photo }}" alt=></div>
+              <div class="list-icon"><img src="{{asset('uploads/'.$item->info_photo) }}" alt=></div>
               <p>{{ $item->info_description }}</p>
             </li>
             
@@ -52,48 +52,50 @@
   <!-- End info section -->
 
   <!-- Start why-choose section -->
-  <section class="why-choose-section section-gap">
+  <section class="why-choose-section section-gap" style= " background: url({{ asset('uploads/'.$whychooseupdate->background_photo)}}) ;
+                                                           background-size: cover;
+                                                           background-repeat: no-repeat;
+                                                           background-position: center center;
+                                                           overflow: hidden ">
     <div class="container">
       <div class="row d-flex align-items-center justify-content-between">
-        <img class="pattern-right" src="assets/img/why-pattern.png" alt=>
+        <img class="pattern-right" src="{{ asset('uploads/'.$whychooseupdate->photo )}}" alt=>
         <div class="col-lg-6 col-md-12">
           <div class="row">
             <div class="col-md-6 col-6">
               <div class="single-why text-center mb-30">
-                <img src="assets/img/w1.png" alt=>
-                <h4>Traffic Analysis</h4>
+                <img src="{{ asset('uploads/'.$whychooseupdate->photo1) }}" alt=>
+                <h4>{{ $whychooseupdate->title3 }}</h4>
               </div>
               <div class="single-why text-center">
-                <img src="assets/img/w2.png" alt=>
-                <h4>24/7 Support</h4>
+                <img src="{{ asset('uploads/'.$whychooseupdate->photo2) }}" alt=>
+                <h4>{{ $whychooseupdate->title4 }}</h4>
               </div>
             </div>
             <div class="col-md-6 col-6">
               <div class="single-why text-center mb-30 mt-50">
-                <img src="assets/img/w3.png" alt=>
-                <h4>Robust Plan</h4>
+                <img src="{{  asset('uploads/'.$whychooseupdate->photo3)}}" alt=>
+                <h4>{{ $whychooseupdate->title5 }}</h4>
               </div>
 
               <div class="single-why text-center">
-                <img src="assets/img/w4.png" alt=>
-                <h4>Think Wisely</h4>
+                <img src="{{ asset('uploads/'.$whychooseupdate->photo4) }}" alt=>
+                <h4>{{ $whychooseupdate->title5 }}</h4>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-6 col-md-12">
           <div class="why-left-wrap">
-            <h1>Full range of
-              Search <br> Engine
-              Optimisation.</h1>
-            <h5>There are many variations of passages of passage available the majority you are going rassing to use.
+            <h1>{{ $whychooseupdate->title }}</h1>
+            <h5>
+              {{ $whychooseupdate->title1 }}
             </h5>
             <p>
-              Having a home based business is a wonderful asset to your life. The problem still stands, when it comes
-              timeadvertise your business for a cheap cost. I know you have looked for to answer everywhere I am here to
-              share a few simple creative ways. There are many variations.
+             {{ $whychooseupdate->description}}
+         
             </p>
-            <a class="btn-style blue-btn" href="#">Discover More</a>
+            <a class="btn-style blue-btn" href="{{ $whychooseupdate->button_url }}">{{$whychooseupdate->button_name}}</a>
           </div>
         </div>
       </div>
@@ -102,38 +104,43 @@
   <!-- End why-choose section -->
 
   <!-- Start stat section -->
-  <section class="stat-section section-gap" id="stat_section">
+  <section class="stat-section section-gap" id="stat_section" style="background: url({{ asset('uploads/'.$stat->background) }});">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-6 col-12">
           <div class="single-stat">
             <h1>
-              <div class="odometer odometer_number_one">0000</div>
-              <div class="sub-text">Project <br> Completed</div>
+              <div class="odometer odometer_number_one">{{ $stat->stat1_number }}</div>
+              <div class="sub-text">
+                {{ $stat->stat1_title }}
+              </div>
             </h1>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-12">
           <div class="single-stat">
             <h1>
-              <div class="odometer odometer_number_two">000</div>
-              <div class="sub-text">Happy <br> Clients</div>
+              <div class="odometer odometer_number_two">{{ $stat->stat2_number }}</div>
+              <div class="sub-text">
+                {{ $stat->stat2_title }}
+              </div>
             </h1>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-12">
           <div class="single-stat">
             <h1>
-              <div class="odometer odometer_number_three">0000</div>
-              <div class="sub-text">Positive <br> Feedback</div>
+              <div class="odometer odometer_number_three">{{ $stat->stat3_number }}</div>
+              <div class="sub-text">{{ $stat->stat3_title }}</div>
             </h1>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-12">
           <div class="single-stat">
             <h1>
-              <div class="odometer odometer_number_four">0000</div>
-              <div class="sub-text">Cup <br> Coffee</div>
+              <div class="odometer odometer_number_four">{{ $stat->stat4_number }}</div>
+              
+              <div class="sub-text">{{ $stat->stat4_title }}</div>
             </h1>
           </div>
         </div>

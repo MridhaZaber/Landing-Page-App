@@ -12,6 +12,9 @@ use App\Http\Controllers\Admin\AdminHomePageController;
 use App\Http\Controllers\Admin\AdminServiceController;
 use App\Http\Controllers\Admin\AdminServiceCategoryController;
 use App\Http\Controllers\Admin\AdminInfoController;
+use App\Http\Controllers\Admin\WhyChooseSectionUpdateController;
+use App\Http\Controllers\Admin\StatController;
+
 
 
 
@@ -55,5 +58,18 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
     Route::get('/admin/info/edit/{id}', [AdminInfoController::class, 'edit'])->name('admin_info_edit');
     Route::post('/admin/info/update/{id}', [AdminInfoController::class, 'update'])->name('admin_info_update');
     Route::get('/admin/info/delete/{id}', [AdminInfoController::class, 'delete'])->name('admin_info_delete');
+
+
+
+    Route::get('/admin/whychoose', [WhyChooseSectionUpdateController::class, 'whychoose'])->name('admin_whychoose');
+    Route::post('/admin/whychoose-update', [WhyChooseSectionUpdateController::class, 'whychoose_update'])->name('admin_whychooseupdate_update');
+
+
+
+    Route::get('/admin/stat', [StatController::class, 'stat'])->name('admin_stat');
+    Route::post('/admin/stat-update', [StatController::class, 'stat_update'])->name('admin_stat_update');
+
+    
+
 
 });
