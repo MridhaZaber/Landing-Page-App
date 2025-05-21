@@ -216,7 +216,7 @@
       </div>
       <div class="single-portfolio">
         <div class="thumb">
-          <img src="assets/img/p5.jpg" alt=>
+          <img src="" alt=>
         </div>
         <div class="details">
           <a class="btn-style" href="service-details.html"><i class="icofont-arrow-right"></i></a>
@@ -235,32 +235,29 @@
   <section class="info-two-section section-gap home-one">
     <div class="container-fluid">
       <div class="row d-flex align-items-center position-relative">
-        <img class="pattern" src="assets/img/info2-pattern.png" alt=>
+        <img class="pattern" src="{{ asset('uploads/'.$infotwo->left_wrap_photo)}}" alt=>
         <div class="col-lg-6 col-md-10 col-12 info-left">
           <div class="info-left-wrap">
-            <h1>Growth strategy with <br>
-              robust implementation</h1>
+            <h1>{{ $infotwo->left_wrap_title }}</h1>
             <p class="sub-text">
-              There are many variations of passages of passage available the
-              majority you are going rassing to use a passage of you need to
-              sure versions over the years.
+              {{ $infotwo->left_wrap_description }}
             </p>
             <div class="row bottom-txt-wrap">
               <div class="col-md-6 col-12 single-bottom-wrap">
-                <img src="assets/img/i5.png" alt=>
-                <h4>Innovative Ideas</h4>
-                <p>Must you with him from him her were more. In eldest be it result should remark.</p>
+                <img src="{{  asset('uploads/'.$infotwo->bottom_wrap_photo1) }}" alt=>
+                <h4>{{ $infotwo->bottom_wrap_title1 }}</h4>
+                <p>{{ $infotwo->bottom_wrap_description1 }}</p>
               </div>
               <div class="col-md-6 col-12 single-bottom-wrap">
-                <img src="assets/img/i6.png" alt=>
-                <h4>Certified Solutions</h4>
-                <p>Unpleasant especially assistance sufficient he comparison so inquietude.</p>
+                <img src="{{ asset('uploads/'.$infotwo->bottom_wrap_photo2)}}" alt=>
+                <h4>{{ $infotwo->bottom_wrap_title2 }}</h4>
+                <p>{{ $infotwo->bottom_wrap_description2 }}</p>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-6 col-md-12 info-right">
-          <img src="assets/img/i2.png" alt=>
+          <img src="{{ asset('uploads/'.$infotwo->right_photo) }}" alt=>
         </div>
       </div>
     </div>

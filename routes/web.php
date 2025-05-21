@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\AdminServiceCategoryController;
 use App\Http\Controllers\Admin\AdminInfoController;
 use App\Http\Controllers\Admin\WhyChooseSectionUpdateController;
 use App\Http\Controllers\Admin\StatController;
+use App\Http\Controllers\Admin\InfoTwoController;
 
 
 
@@ -68,6 +69,10 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
 
     Route::get('/admin/stat', [StatController::class, 'stat'])->name('admin_stat');
     Route::post('/admin/stat-update', [StatController::class, 'stat_update'])->name('admin_stat_update');
+
+
+    Route::get('/admin/info-two', [InfoTwoController::class, 'infotwo'])->name('admin_info_two');
+    Route::post('/admin/info-two-update', [InfoTwoController::class, 'infotwo_update'])->name('admin_home_info_two_update');
 
     
 
