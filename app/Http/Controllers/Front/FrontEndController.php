@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\InfoTwo;
+use App\Models\Protfolio;
 use App\Models\Service;
 use App\Models\AdminServiceCategory;
 use App\Models\WhyChoose;
@@ -25,7 +26,8 @@ class FrontEndController extends Controller
         $whychooseupdate = WhyChooseSectionUpdate::where('id',1)->first();
         $stat=Stat::where('id',1)->first();
         $infotwo=InfoTwo::where('id',1)->first();
-        return view('front.home',compact('page_data','services_data','service_categories','infos','whychooseupdate','stat','infotwo'));
+        $protfolio_data = Protfolio::orderBy('id','asc')->get();
+        return view('front.home',compact('page_data','services_data','service_categories','infos','whychooseupdate','stat','infotwo','protfolio_data'));
 
 
     }

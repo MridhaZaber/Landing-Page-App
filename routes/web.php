@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ProtfolioController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Front\FrontEndController;
@@ -73,6 +74,20 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
 
     Route::get('/admin/info-two', [InfoTwoController::class, 'infotwo'])->name('admin_info_two');
     Route::post('/admin/info-two-update', [InfoTwoController::class, 'infotwo_update'])->name('admin_home_info_two_update');
+
+
+
+    Route::get('/admin/home-portfolio', [AdminHomePageController::class, 'portfolio'])->name('admin_home_portfolio');
+    Route::post('/admin/home-portfolio-update', [AdminHomePageController::class, 'portfolio_update'])->name('admin_home_portfolio_update');
+
+    Route::get('/admin/protfolio/show', [ProtfolioController::class, 'index'])->name('admin_protfolio_show');
+    Route::get('/admin/protfolio/add', [ProtfolioController::class, 'add'])->name('admin_protfolio_add');
+    Route::post('/admin/protfolio/submit', [ProtfolioController::class, 'store'])->name('admin_protfolio_submit');
+    Route::get('/admin/protfolio/edit/{id}', [ProtfolioController::class, 'edit'])->name('admin_protfolio_edit');
+    Route::post('/admin/protfolio/update/{id}', [ProtfolioController::class, 'update'])->name('admin_protfolio_update');
+    Route::get('/admin/protfolio/delete/{id}', [ProtfolioController::class, 'delete'])->name('admin_protfolio_delete');
+
+
 
     
 

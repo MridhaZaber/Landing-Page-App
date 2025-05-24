@@ -20,6 +20,9 @@ return new class extends Migration
             $table->text('banner_photo');
             $table->text('info_title')->nullable;
             $table->text('info_photo');
+            $table->text('portfolio_subtitle')->nullable();
+            $table->text('portfolio_title')->nullable();
+            $table->text('portfolio_status');
 
             $table->timestamps();
         });

@@ -19,6 +19,7 @@
                         <li class="{{ Request::is('admin/home-info') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_home_info') }}"><i class="fas fa-angle-right"></i> Info Section</a></li>
                         <li class="{{ Request::is('admin/page/services') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_page_services') }}"><i class="fas fa-angle-right"></i> Services Section</a></li>
                         <li class="{{ Request::is('admin/stat') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_stat') }}"><i class="fas fa-angle-right"></i> Stat Section</a></li>
+                        <li class="{{ Request::is('admin/home-portfolio') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_home_portfolio') }}"><i class="fas fa-angle-right"></i>Portfolio Section</a></li>
                        
                            
                         </ul>
@@ -28,6 +29,7 @@
                    
 
                     <li class="{{ Request::is('admin/info/show') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_info_show') }}"><i class="fas fa-hand-point-right"></i> <span>Info</span></a></li>
+                    <li class="{{ Request::is('admin/protfolio/show') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_protfolio_show') }}"><i class="fas fa-hand-point-right"></i> <span>Protfolio</span></a></li>
 
 
 

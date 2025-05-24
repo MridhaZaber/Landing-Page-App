@@ -150,85 +150,47 @@
   <!-- End stat section -->
 
   <!-- Start portfolio section -->
+
+  @if ($page_data->portfolio_status=='Show')
+  
+ 
   <section class="portfolio-section section-gap-top">
     <div class="container">
       <div class="row d-flex justify-content-center section-title">
         <div class="col-lg-6 col-md-8 col-12">
-          <h1>Some project we provide
-            for our customer</h1>
-          <p>There are many variations of passages of passage available the majority
-            you are going rassing to use a passage of you need to sure.</p>
+
+        @if ($page_data->portfolio_subtitle !='')
+        <h1>{{ $page_data->portfolio_subtitle }}</h1>
+            @endif
+
+            @if ($page_data->portfolio_title != '')
+          <p>{{$page_data->portfolio_title }}</p>
+           @endif
         </div>
       </div>
     </div>
     <div class="portfolio-carusel-wrap  owl-carousel owl-theme">
+
+    @foreach ( $protfolio_data  as $row_data )
+    
+   
       <div class="single-portfolio">
         <div class="thumb">
-          <img src="assets/img/p1.jpg" alt=>
+          <img src="{{ asset('uploads/'.$row_data->photo) }}" alt=>
         </div>
         <div class="details">
           <a class="btn-style" href="service-details.html"><i class="icofont-arrow-right"></i></a>
           <a href="service-details.html">
-            <h4>Graphical Presentation</h4>
+            <h4>{{ $row_data->subtitle }}</h4>
           </a>
-          <p>It is a long established fact that reader will be distracted the readable content of a page when looking at
-            its point.</p>
+          <p>{{ $row_data->title }}</p>
         </div>
       </div>
-      <div class="single-portfolio">
-        <div class="thumb">
-          <img src="assets/img/p2.jpg" alt=>
-        </div>
-        <div class="details">
-          <a class="btn-style" href="service-details.html"><i class="icofont-arrow-right"></i></a>
-          <a href="service-details.html">
-            <h4>Banner Design</h4>
-          </a>
-          <p>It is a long established fact that reader will be distracted the readable content of a page when looking at
-            its point.</p>
-        </div>
-      </div>
-      <div class="single-portfolio">
-        <div class="thumb">
-          <img src="assets/img/p3.jpg" alt=>
-        </div>
-        <div class="details">
-          <a class="btn-style" href="service-details.html"><i class="icofont-arrow-right"></i></a>
-          <a href="service-details.html">
-            <h4>Magazine Design</h4>
-          </a>
-          <p>It is a long established fact that reader will be distracted the readable content of a page when looking at
-            its point.</p>
-        </div>
-      </div>
-      <div class="single-portfolio">
-        <div class="thumb">
-          <img src="assets/img/p4.jpg" alt=>
-        </div>
-        <div class="details">
-          <a class="btn-style" href="service-details.html"><i class="icofont-arrow-right"></i></a>
-          <a href="service-details.html">
-            <h4>Flayer Design</h4>
-          </a>
-          <p>It is a long established fact that reader will be distracted the readable content of a page when looking at
-            its point.</p>
-        </div>
-      </div>
-      <div class="single-portfolio">
-        <div class="thumb">
-          <img src="" alt=>
-        </div>
-        <div class="details">
-          <a class="btn-style" href="service-details.html"><i class="icofont-arrow-right"></i></a>
-          <a href="service-details.html">
-            <h4>Cover Design</h4>
-          </a>
-          <p>It is a long established fact that reader will be distracted the readable content of a page when looking at
-            its point.</p>
-        </div>
-      </div>
+       @endforeach
+      
     </div>
   </section>
+   @endif
   <!-- End portfolio section -->
 
   <!-- Start info-two section -->

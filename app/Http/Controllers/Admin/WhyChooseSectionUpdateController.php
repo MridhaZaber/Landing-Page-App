@@ -10,17 +10,12 @@ class WhyChooseSectionUpdateController extends Controller
 {
      public function whychoose()
     {
-       
-        
         $page_data = WhyChooseSectionUpdate::where('id',1)->first();
         return view('admin.whychoosesectionupdate_show', compact('page_data'));
     }
 
     public function whychoose_update(Request $request)
     {
-        
-         
-        
         $page_data = WhyChooseSectionUpdate::where('id',1)->first();
 
         $request->validate([
