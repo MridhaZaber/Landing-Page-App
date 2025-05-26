@@ -4,6 +4,9 @@ use App\Http\Controllers\Admin\ProtfolioController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Front\FrontEndController;
+use App\Http\Controllers\Front\FrontEndPortfolioController;
+
+
 
 
 
@@ -16,12 +19,14 @@ use App\Http\Controllers\Admin\AdminInfoController;
 use App\Http\Controllers\Admin\WhyChooseSectionUpdateController;
 use App\Http\Controllers\Admin\StatController;
 use App\Http\Controllers\Admin\InfoTwoController;
+use App\Http\Controllers\Admin\ProtfolioCategoryController;
 
 
 
 
 //Frontend Route
 Route::get('/',[FrontEndController::class,'index'])->name('frontend');
+Route::get('/portfolio',[FrontEndPortfolioController::class,'index'])->name('frontend_porfolio');
 
 
 
@@ -86,6 +91,15 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
     Route::get('/admin/protfolio/edit/{id}', [ProtfolioController::class, 'edit'])->name('admin_protfolio_edit');
     Route::post('/admin/protfolio/update/{id}', [ProtfolioController::class, 'update'])->name('admin_protfolio_update');
     Route::get('/admin/protfolio/delete/{id}', [ProtfolioController::class, 'delete'])->name('admin_protfolio_delete');
+
+    Route::get('/admin/protfolio-category/show', [ProtfolioCategoryController::class, 'index'])->name('admin_protfolio_category_show');
+    Route::get('/admin/protfolio-category/add', [ProtfolioCategoryController::class, 'add'])->name('admin_protfolio_category_add');
+    Route::post('/admin/protfolio-category/submit', [ProtfolioCategoryController::class, 'store'])->name('admin_protfolio_category_submit');
+    Route::get('/admin/protfolio-category/edit/{id}', [ProtfolioCategoryController::class, 'edit'])->name('admin_protfolio_category_edit');
+    Route::post('/admin/protfolio-category/update/{id}', [ProtfolioCategoryController::class, 'update'])->name('admin_protfolio_category_update');
+    Route::get('/admin/protfolio-category/delete/{id}', [ProtfolioCategoryController::class, 'delete'])->name('admin_protfolio_category_delete');
+
+
 
 
 

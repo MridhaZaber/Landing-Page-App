@@ -11,7 +11,7 @@
 
                     <li class="{{ Request::is('admin/home-banner') ? "active" : "" }} ? "><a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-hand-point-right"></i> <span>Dashboard</span></a></li>
 
-                    <li class="nav-item dropdown active">
+                    <li class="nav-item dropdown ">
                         <a href="#" class="nav-link has-dropdown "><i class="fas fa-hand-point-right"></i><span>Home Page</span></a>
                         <ul class="dropdown-menu">
 
@@ -29,7 +29,20 @@
                    
 
                     <li class="{{ Request::is('admin/info/show') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_info_show') }}"><i class="fas fa-hand-point-right"></i> <span>Info</span></a></li>
-                    <li class="{{ Request::is('admin/protfolio/show') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_protfolio_show') }}"><i class="fas fa-hand-point-right"></i> <span>Protfolio</span></a></li>
+                   
+
+                      <li class="nav-item dropdown {{ Request::is('admin/protfolio-category/*')||Request::is('admin/protfolio/*') ? "active" : "" }}">
+                        <a href="#" class="nav-link has-dropdown  "><i class="fas fa-hand-point-right"></i><span>Protfolio Section</span></a>
+                        <ul class="dropdown-menu">
+
+                     
+                         <li class="{{ Request::is('admin/protfolio-category/show') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_protfolio_category_show') }}"><i class="fas fa-hand-point-right"></i> <span>Category</span></a></li>
+                        <li class="{{ Request::is('admin/protfolio/show') ? "active" : "" }}"><a class="nav-link" href="{{ route('admin_protfolio_show') }}"><i class="fas fa-hand-point-right"></i> <span>Protfolio</span></a></li>
+                        
+                       
+                           
+                        </ul>
+                    </li>
 
 
 

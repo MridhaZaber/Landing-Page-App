@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\PortfolioCategory;
 use App\Models\Protfolio;
 use Illuminate\Http\Request;
 
@@ -14,13 +15,14 @@ class ProtfolioController extends Controller
     
     public function index()
     {
-        $all_data = Protfolio::get();
+        $all_data = Protfolio::with('rportfoliocategory')->orderBy('id','asc')->get();
         return view('admin.protfolio_show', compact('all_data'));
     }
 
     public function add()
     {
-        return view('admin.protfolio_add');
+        $portfolio_categories = PortfolioCategory::get();
+        return view('admin.protfolio_add',compact('portfolio_categories'));
     }
 
     public function store(Request $request)
@@ -40,6 +42,8 @@ class ProtfolioController extends Controller
         
         $obj->subtitle = $request->subtitle;
         $obj->title = $request->title;
+        $obj->portfolio_category_id = $request->portfolio_category_id;
+
         $obj->save();
 
         return redirect()->route('admin_protfolio_show')->with('success', 'Data is inserted successfully.');
@@ -48,7 +52,8 @@ class ProtfolioController extends Controller
     public function edit($id)
     {
         $row_data = Protfolio::where('id',$id)->first();
-        return view('admin.protfolio_edit',compact('row_data'));
+        $portfolio_categories = PortfolioCategory::get();
+        return view('admin.protfolio_edit',compact('row_data','portfolio_categories'));
     }
 
     
@@ -77,6 +82,7 @@ class ProtfolioController extends Controller
 
         $obj->title = $request->title;
         $obj->subtitle = $request->subtitle;
+        $obj->portfolio_category_id = $request->portfolio_category_id;
         
         $obj->update();
 

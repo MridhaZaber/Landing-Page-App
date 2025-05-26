@@ -20,7 +20,7 @@
                             <div class="mb-4">
                                     <label class="form-label">Existing Photo</label>
                                     <div>
-                                    <img width='50px' src="{{ asset($row_data->photo) }}" alt="" class="w_100">
+                                    <img width='50px' src="{{ asset('uploads/'.$row_data->photo) }}" alt="" class="w_100">
                                     </div>
                                 </div>
 
@@ -29,6 +29,15 @@
                                     <div>
                                         <input type="file" name="photo">
                                     </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label">Select Category *</label>
+                                    <select name="portfolio_category_id" class="form-control select2">
+                                        @foreach($portfolio_categories as $item)
+                                           <option value="{{ $item->id }}" @if($item->id == $row_data->portfolio_category_id) selected @endif>{{ $item->category_name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                            
                                 <div class="mb-4">
@@ -40,6 +49,8 @@
                                     <label class="form-label"></label>Title *</label>
                                     <input type="text" class="form-control" name="title" value="{{ $row_data->title }}">
                                 </div>
+
+
                                 
                                 <div class="mb-4">
                                     <label class="form-label"></label>

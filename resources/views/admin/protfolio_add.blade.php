@@ -22,7 +22,16 @@
                                     <div>
                                         <input type="file" name="photo">
                                     </div>
-                                </div>    
+                                </div>  
+                                
+                                 <div class="mb-4">
+                                    <label class="form-label">Select Category *</label>
+                                    <select name="portfolio_category_id" class="form-control select2">
+                                        @foreach($portfolio_categories as $item)
+                                            <option value="{{ $item->id }}">{{ $item->category_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                  
                               <div class="mb-4">
                                     <label class="form-label">Sub Title *</label>
