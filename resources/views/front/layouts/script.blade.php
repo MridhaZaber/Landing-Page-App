@@ -6,4 +6,5 @@
   <script src="{{ asset('front/assets/js/odometer.js') }}"></script>
   <script src="{{ asset('front/assets/js/tilt.jquery.min.js') }}"></script>
   <script src="{{ asset('front/assets/js/main.js') }}"></script>
+
  

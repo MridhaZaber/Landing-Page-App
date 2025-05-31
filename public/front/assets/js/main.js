@@ -28,8 +28,8 @@
 
   $(".scroll-top").on("click", function () {
     $("html,body").animate({
-        scrollTop: 0
-      },
+      scrollTop: 0
+    },
       500
     );
     return false;
@@ -86,7 +86,7 @@
           $('.odometer_number_three').html('210');
           $('.odometer_number_four').html('390');
         }, 5);
-      } else {}
+      } else { }
     });
   });
 

@@ -67,6 +67,7 @@
   </div>
   <!-- End Scroll Top -->
  @include('front.layouts.script')
+ 
 </body>
 
 

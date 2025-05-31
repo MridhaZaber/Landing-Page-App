@@ -1685,7 +1685,9 @@ button {
   position: relative;
   border-radius: 5px;
   overflow: hidden;
+
 }
+
 
 .single-portfolio:hover .thumb:after {
   opacity: 1;
@@ -3384,6 +3386,8 @@ button {
 /*----------------------------------------*/
 .header-section.home-two .header-right img {
   display: none;
+
+
 }
 
 @media (max-width: 1099px) {
@@ -4088,5 +4092,11 @@ button {
     margin-top: 10px;
   }
 }
+
+.new_class {
+  display: flex !important;
+}
+
+
 
 /*# sourceMappingURL=style.css.map */

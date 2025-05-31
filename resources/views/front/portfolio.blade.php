@@ -13,9 +13,9 @@
       </div>
       <div class="row d-flex justify-content-center">
         <ul class="filter-list">
-          <li class="filter-button" data-filter="*">Show All</li>
+          <li class="filter-button" data-filter="all">Show All</li>
             @foreach($portfolio_categories as $item)
-          <li class="filter-button" data-filter="{{ $item->id }}">{{ $item->category_name }}</li>
+          <li class="filter-button" data-filter="{{ $item->id }}" >{{ $item->category_name }}</li>
           @endforeach
          
         </ul>
@@ -23,8 +23,9 @@
 
       <div class="row">
          @foreach($portfolios as $item)
-        <div class="single-portfolio col-lg-4 col-md-6 filter-item" data-type="{{ $item->id}}"  >
-           
+        
+        <div class="single-portfolio col-lg-4 col-md-6 filter {{ $item->portfolio_category_id}}" >
+        
           <div class="thumb">
             <img src="{{ asset('uploads/'.$item->photo) }}" class="img-fluid" alt="">
           </div>
@@ -34,12 +35,14 @@
             </a>
             <p>{{ $item->title }}</p>
             <a class="btn-style" href="service-details.html"><i class="icofont-arrow-right"></i></a>
+            
           </div>
+  
 
         
         </div>
-          @endforeach
-
+        @endforeach
+        
 
       </div>
     </div>

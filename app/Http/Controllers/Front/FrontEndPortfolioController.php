@@ -18,6 +18,7 @@ class FrontEndPortfolioController extends Controller
     public function index(){
          $page_data = HomePageItem::where('id',1)->first();
          $portfolios = Protfolio::orderBy('id','asc')->get();
+         //dd($portfolios);
          $portfolio_categories = PortfolioCategory::orderBy('id','asc')->get();
         return view('front.portfolio' ,compact('page_data','portfolios','portfolio_categories'));
     }
